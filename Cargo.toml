@@ -1,0 +1,11 @@
+[package]
+name = "esp_probe_example"
+version = "0.1.0"
+authors = ["Scott Mabin <scott@mabez.dev>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+hal = { package = "esp32c3-hal", version = "0.7.0", features = ["direct-boot"] }
+esp-backtrace = { version = "0.5.0", features = ["esp32c3", "panic-handler", "print-rtt"] }
+esp-println = { version = "0.3.1", default-features = false, features = ["esp32c3", "rtt"] } # important! use the RTT feature to get debug output over the debugger!
