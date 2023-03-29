@@ -3,7 +3,7 @@
 
 use esp_backtrace as _;
 use esp_println::println;
-use hal::{clock::ClockControl, peripherals::Peripherals, prelude::*, timer::TimerGroup, Rtc};
+use hal::{clock::ClockControl, peripherals::Peripherals, prelude::*, timer::TimerGroup, Rtc, Delay};
 
 #[entry]
 fn main() -> ! {
@@ -23,7 +23,10 @@ fn main() -> ! {
     wdt0.disable();
     wdt1.disable();
 
-    println!("Hello world!");
+    let mut delay = Delay::new(&clocks);
 
-    loop {}
+    loop {
+        println!("Hello world!");
+        delay.delay_ms(1000_u32);
+    }
 }
