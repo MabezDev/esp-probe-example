@@ -19,7 +19,15 @@
             "coreConfigs": [
                 {
                     "coreIndex": 0,
-                    "programBinary": "target/riscv32imc-unknown-none-elf/debug/esp_probe_example"
+                    "programBinary": "target/riscv32imc-unknown-none-elf/debug/esp_probe_example",
+                    "rttEnabled": true,
+                    "rttChannelFormats": [
+                        {
+                            "channelNumber": 0,
+                            "dataFormat": "String", // Format RTT data as String data
+                            "showTimestamps": true // Include host-side timestamps for every line of data transferred from the target RTT output
+                        },
+                    ]
                 }
             ]
         },
@@ -33,9 +41,17 @@
             "coreConfigs": [
                 {
                     "coreIndex": 0,
-                    "programBinary": "target/riscv32imc-unknown-none-elf/debug/esp_probe_example"
+                    "programBinary": "target/riscv32imc-unknown-none-elf/debug/esp_probe_example",
+                    "rttEnabled": true,
+                    "rttChannelFormats": [
+                        {
+                            "channelNumber": 0,
+                            "dataFormat": "String", // Format RTT data as String data
+                            "showTimestamps": true // Include host-side timestamps for every line of data transferred from the target RTT output
+                        },
+                    ]
                 }
-            ]
+            ],
         }
     ]
 }
